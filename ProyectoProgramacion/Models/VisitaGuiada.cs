@@ -2,7 +2,7 @@
 {
     public class VisitaGuiada
     {
-        int IdTour {  get; set; }
+        int IdTour {  get; set; } 
 
     }
 }
