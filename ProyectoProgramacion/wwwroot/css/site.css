@@ -20,3 +20,10 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.navbar-custom {
+    background-color: dimgrey;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+}

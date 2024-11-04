@@ -1,4 +1,8 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<GimnasioContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("GimnasioContext") ?? throw new InvalidOperationException("Connection string 'GimnasioContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
