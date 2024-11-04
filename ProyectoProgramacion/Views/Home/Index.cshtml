@@ -1,8 +1,39 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<script>
+    function Login(){
+        var url = "@Url.Action("Login","Home")";
+        var email = $("#email").val();
+        var password = $("#password").val();
+        var data = { email: email, password: password }
+        $.ajax({
+            data: data,
+            url: url,
+            type: 'post',
+            dataType: 'json',
+            success: function(response){
+                var jdata = JSON.parse(response);
+                if (jdata["status"] == 200) {
+                    alert("Inicio sesión exitosamente");
+                } else {
+                    alert(jdata["data"]);
+                }
+            },
+            error: function (error) {
+                alert(error);
+                console.log(error);
+            }
+        });
+    }
+</script>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <label>Correo Electronico</label> <br />
+    <input id="email" type="text" /> <br /><br />
+    <label>Contraseña</label> <br/>
+    <input id="password" type="password" /> <br /> <br />
+    <button onclick="Login()">Iniciar Sesión</button>
 </div>
