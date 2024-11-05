@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProyectoProgramacion.Models
 {
@@ -10,7 +11,9 @@ namespace ProyectoProgramacion.Models
         [MinLength(10)]
         public string cedula { get; set; }
         public string nombre { get; set; }
-        public string membresia { get; set; }
+        [ForeignKey("TiposMembresia")]
+        public int TiposMembresia { get; set; }
+        public TiposMembresia? membresia { get; set; }
         public DateTime caducidad {  get; set; }
     }
 }

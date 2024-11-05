@@ -7,6 +7,7 @@
         var email = $("#email").val();
         var password = $("#password").val();
         var data = { email: email, password: password }
+        var membresias = context.Membresia.ToList();
         $.ajax({
             data: data,
             url: url,

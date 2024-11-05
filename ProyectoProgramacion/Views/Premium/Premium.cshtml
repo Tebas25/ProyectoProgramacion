@@ -1,0 +1,32 @@
+﻿
+@model IEnumerable<ProyectoProgramacion.Models.Membresias>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cedula</th>
+            <th>Nombre</th>
+            <th>Membresia</th>
+            <th>Fecha de caducidad</th>
+            <!-- Agrega las demás columnas necesarias -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var membresias in Model)
+        {
+            <tr>
+                <td>@membresias.cedula</td>
+                <td>@membresias.nombre</td>
+                <td>@membresias.membresia.Tipo</td>
+                <td>@membresias.caducidad</td>
+                <!-- Agrega los demás campos -->
+            </tr>
+        }
+    </tbody>
+</table>
+
+

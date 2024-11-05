@@ -15,4 +15,6 @@ using ProyectoProgramacion.Models;
         public DbSet<ProyectoProgramacion.Models.Membresias> Membresias { get; set; } = default!;
 
 public DbSet<ProyectoProgramacion.Models.Usuarios> Usuarios { get; set; } = default!;
+
+public DbSet<ProyectoProgramacion.Models.TiposMembresia> TiposMembresia { get; set; } = default!;
     }
